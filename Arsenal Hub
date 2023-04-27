@@ -26,27 +26,3 @@ end)
 OtherSection:NewButton("DexHub", "View game code", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/HonestlyDex/DexHub/main/Init'))()
 end)
-
-local Player = Window:NewTab("Player")
-local PlayerSection = Player:NewSection("Some things may not work")
-
-PlayerSection:NewSlider("WalkSpeed", "Set Custom Jump Power!", 600, 50, function(s)
-    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
-end)
- 
-PlayerSection:NewSlider("JumpPower", "Set Custom Walk Speed!", 600, 16, function(s)
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
-end)
- 
-PlayerSection:NewButton("Rest WS&JP", "Rest them with a button!", function()
-    game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
-end)
- 
-PlayerSection:NewToggle("Super-Human", "Run fast jump high", function(state)
-    game.Players.LocalPlayer.Character.Humanoid.JumpPower = 102
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 150
-else
-    game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
-end)
